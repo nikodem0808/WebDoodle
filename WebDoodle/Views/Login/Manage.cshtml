@@ -1,0 +1,30 @@
+﻿
+<link rel="stylesheet" href="~/css/manage.css" type="text/css"/>
+
+<h1 class="text-center"> Account Management </h1>
+<div class="d-block text-center">
+    <ul class="text-start d-inline-block">
+        <li> Username: @Context.Session.GetString("username") <button class="btn-info text-decoration-none rounded-pill ps-3 pe-3" onclick="EditUsername()"> Change </button> </li>
+        <li> Password: &lt;Hashed!&gt; <button class="btn-info text-decoration-none rounded-pill ps-3 pe-3" onclick="EditPassword()"> Change </button> </li>
+    </ul>
+    <br/>
+    <a asp-controller="Login" asp-action="Delete" class="text-decoration-none btn-danger d-inline-block w-25 rounded-pill"> Delete Account </a>
+    <script src="~/js/manage.js"></script>
+</div>
+
+
+<div id="popup" class="d-block align-self-center container w-25 text-center mt-5" style="display: none !important;">
+    <h3 class="text-center" id="popupText"> Action </h3>
+    <div class="align-self-center form-floating mb-2">
+        <input class="form-control card-body align-self-center" type="text" name="field" placeholder="field" id="fieldInput">
+        <label for="field" id="fieldLabel"> Field </label>
+    </div>
+    <div class="align-self-center form-floating mb-2">
+        <input class="form-control card-body align-self-center" type="password" name="password" placeholder="Password" id="Password">
+        <label for="password"> Password </label>
+    </div>
+    <div class="d-flex justify-content-center w-50" id="buttonContainer">
+        <button class="d-inline btn-danger rounded-pill text-center editButton" onclick="Cancel()"> Cancel </button>
+        <button class="d-inline btn-success rounded-pill text-center editButton" onclick="ExecuteAction()"> Change </button>
+    </div>
+</div>

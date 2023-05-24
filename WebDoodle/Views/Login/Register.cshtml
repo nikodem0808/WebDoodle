@@ -1,0 +1,20 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h2 class="text-center"> Welcome To The Account Creation Page! </h2>
+<form method="post" asp-controller="Login" asp-action="Create">
+    <div class="d-block align-self-center container w-25">
+        <div class="align-self-center form-floating mb-2">
+            <input class="form-control card-body align-self-center" type="text" name="username" placeholder="Username">
+            <label for="username"> Username </label>
+        </div>
+        <div class="align-self-center form-floating mb-2">
+            <input class="form-control card-body align-self-center" type="password" name="password" placeholder="Password">
+            <label for="password"> Password </label>
+        </div>
+        <input class="bg-gradient btn-info text-center form-floating align-self-center form-control" type="submit" value="Register">
+    </div>
+</form>

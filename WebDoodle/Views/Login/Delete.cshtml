@@ -1,0 +1,18 @@
+﻿
+
+<link rel="stylesheet" href="~/css/draw.css" type="text/css" />
+
+<div class="w-100 text-center">
+    <h1> Do you really want to delete your account? </h1>
+    <h3> This action cannot be undone, all data will be lost forever </h3>
+    <div class="form-floating mb-2 w-100 text-center" style="left: 25%;">
+        <input class="form-control card-body align-self-center w-50" type="password" name="password" placeholder="Confirm With Password" id="passwordField">
+        <label for="password"> Confirm With Password </label>
+    </div>
+    <div class="d-flex justify-content-center w-50" id="buttonContainer">
+        <button class="d-inline btn-success rounded-pill text-center drawPageButton text-decoration-none" onclick="GoBack()"> Go Back </button>
+        <button class="d-inline btn-danger rounded-pill text-center drawPageButton" onclick="SendDeleteRequest()"> Delete </button>
+    </div>
+</div>
+
+<script src="~/js/delete.js"></script>

@@ -1,0 +1,19 @@
+﻿
+
+@if ((Context.Session.GetString("LoggedIn") ?? "False") == "True")
+{
+    <link rel="stylesheet" href="/css/gallery.css" type="text/css"/>
+    
+    <h2 class="text-center"> Your Gallery </h2>
+    <h3 class="text-center"> Page <span id="pageNumber">1</span> </h3>
+    <div id="controlsContainer" class="d-flex m-4">
+        <button onclick="previousPage()" class="form-control d-inline"> &lt; </button>
+        <button onclick="nextPage()" class="form-control d-inline"> &gt; </button>
+    </div>
+    <div class="d-inline-flex card-group w-100 flex-wrap justify-content-center" id="drawingContainer"></div>
+    <script src="~/js/gallery.js"></script>
+}
+else
+{
+    <h1 class="text-center"> Log In To Access Your Gallery! </h1>
+}

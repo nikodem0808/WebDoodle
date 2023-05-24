@@ -1,0 +1,32 @@
+﻿@model WebDoodle.DataModels.DrawingData
+
+<link rel="stylesheet" href="~/css/draw.css" type="text/css"/>
+
+<div class="d-block text-center">
+    @if ((Context.Session.GetString("LoggedIn") ?? "False") == "True")
+    {
+        <h2 class="text-center"> Your Canvas </h2>
+        <div class="d-block text-center w-100">
+            <canvas class="d-inline" id="surface" style="border: 1px solid blue;" width="400" height="400"></canvas>
+        </div>
+        <input type="color" value="#000000" id="colorInput"/>
+        <input type="range" min="1" max="15" step="1" value="1" id="widthInput"/>
+        <div class="d-flex justify-content-center w-50" id="buttonContainer">
+            <button class="d-inline btn-warning rounded-pill text-center drawPageButton" onclick="ClearCanvas()"> Clear </button>
+            <button class="d-inline btn-info rounded-pill text-center drawPageButton" onclick="Send()"> Save </button>
+            @if (Model != null)
+            {
+                <button class="d-inline btn-success rounded-pill text-center drawPageButton" onclick="Edit()"> Update </button>
+            }
+        </div>
+        <script src="~/js/drawing_handler.js"></script>
+        @if (Model != null)
+        {
+            <script> var editDrawingId = @Model.id; </script>
+        }
+    }
+    else
+    {
+        <h1 class="text-center"> Log In To Draw Something! </h1>
+    }
+</div>

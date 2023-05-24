@@ -1,0 +1,25 @@
+﻿
+
+#popup {
+    position: fixed;
+    top: 50vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 540px;
+    background-color: aqua;
+    text-align: center;
+    border-radius: 1rem 1rem;
+    padding: 1rem;
+    padding-bottom: 0.7rem;
+    outline: 12px ridge #F0F0F0;
+}
+
+#buttonContainer {
+    align-items: stretch;
+    transform: translate(50%, 0);
+}
+
+.editButton {
+    flex: 1 1 auto !important;
+    text-align: center;
+}
