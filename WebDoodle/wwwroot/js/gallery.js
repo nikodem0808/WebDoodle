@@ -16,7 +16,7 @@ function UpdatePageNumber() {
     pageNumber.innerHTML = (currentPage + 1).toString();
 }
 
-async function partlyCopyArray(min, max, source, target) {
+async function partiallyCopyArray(min, max, source, target) {
     for (var i = min; i < max; i++) {
         target[i] = source[i];
     }
@@ -136,9 +136,9 @@ function MakeExtendedDrawingDOMElement() {
         var i;
         const partitionSize = 128;
         for (i = 0; i + partitionSize < sdata.length; i += partitionSize) {
-            await partlyCopyArray(i, i + partitionSize, sdata, idata.data);
+            await partiallyCopyArray(i, i + partitionSize, sdata, idata.data);
         }
-        await partlyCopyArray(i, sdata.length, sdata, idata.data);
+        await partiallyCopyArray(i, sdata.length, sdata, idata.data);
         pen.putImageData(idata, 0, 0);
     };
     return elem;
